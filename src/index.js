@@ -1,3 +1,5 @@
 import 'unfetch/polyfill'
+import { h, render } from 'preact'
+import { App } from '~/component/App'
 
-console.log('hello')
+render(<App />, document.body, document.getElementById('app'))
