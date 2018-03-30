@@ -10,17 +10,25 @@ const routes = [
 
 const getRoute = routeValidator(routes)
 
+const resetScroll = () => {
+  if (window.scrollTo) window.scrollTo(0, 0)
+  document.body.scrollTop = 0
+}
+
 export default C =>
   class WithRoute extends Component {
     state = getRoute(getLocation().pathname)
 
-    goTo = path =>
+    goTo = path => {
+      resetScroll()
       this.setState(getRoute(path), () => pushState(this.state.path))
+    }
 
     componentDidMount() {
-      window.addEventListener('popstate', () =>
+      window.addEventListener('popstate', () => {
+        resetScroll()
         this.setState(getRoute(getLocation().pathname))
-      )
+      })
     }
 
     render() {
