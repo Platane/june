@@ -1,5 +1,6 @@
 import { injectGlobal, hydrate } from 'preact-emotion'
 import { h, Component } from 'preact'
+import { dark } from './palette'
 
 export const injectReset = () => {
   if (typeof window !== 'undefined' && window.__emotion_ids)
@@ -14,6 +15,7 @@ export const injectReset = () => {
 
       html,
       body {
+        color: ${dark};
         height: 100%;
         position: relative;
         margin: 0;

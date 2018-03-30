@@ -49,7 +49,7 @@ export const shows: Show[] = [
     name: 'Gilmore Girls',
     genres: ['Drama', 'Comedy', 'Romance'],
     status: { type: 'Ended' },
-    rating: 8.8,
+    rating: 0.88,
     network: 'The CW',
     image: {
       medium:
@@ -69,7 +69,7 @@ export const shows: Show[] = [
     name: 'Derry Girls',
     genres: ['Comedy'],
     status: { type: 'Running', scheduledDay: 'Thursday' },
-    rating: 6.8,
+    rating: 0.68,
     network: 'Channel 4',
     image: {
       medium:
@@ -86,7 +86,7 @@ export const shows: Show[] = [
     name: 'The Powerpuff Girls',
     genres: ['Comedy'],
     status: { type: 'Running', scheduledDay: 'Sunday' },
-    rating: 7,
+    rating: 0.7,
     network: 'Cartoon Network',
     image: {
       medium:
@@ -96,6 +96,17 @@ export const shows: Show[] = [
     },
     summary:
       "The city of Townsville may be a beautiful, bustling metropolis, but don't be fooled! There's evil afoot! And only three things can keep the bad guys at bay: Blossom, Bubbles and Buttercup, three super-powered little girls, known to their fans (and villains everywhere) as <b>The Powerpuff Girls</b>. Juggling school, bedtimes, and beating up giant monsters may be daunting, but together the Powerpuff Girls are up to the task. Battling a who's who of evil, they show what it really means to \"fight like a girl.\"",
+    cast: [],
+  },
+  {
+    id: '6772',
+    name: 'Mostly empty',
+    genres: ['Comedy'],
+    status: { type: 'In Development' },
+    rating: null,
+    network: null,
+    image: null,
+    summary: null,
     cast: [],
   },
 ]
