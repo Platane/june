@@ -15,14 +15,23 @@ export type Props = {
   show: Show,
 }
 
-export const Card = ({ show, ...props }: Props) => (
-  <Container {...props}>
+const createClickHandler = ({ show, goTo, writePosition }) => event => {
+  // write position to have a nice transition
+  writePosition(`show.${show.id}`, event.target.getBoundingClientRect())
+
+  // change router
+  goTo(`/show/${show.id}`)
+}
+
+//elementKey={show.id}
+export const Card = (props: Props) => (
+  <Container {...props} onClick={createClickHandler(props)}>
     <FixedRatio ratio={4 / 5}>
-      <Image src={show.image && show.image.original} />
+      <Image src={props.show.image && props.show.image.original} />
     </FixedRatio>
     <Content>
-      <StarCount count={show.rating} />
-      <Name>{show.name}</Name>
+      <StarCount count={props.show.rating} />
+      <Name>{props.show.name}</Name>
     </Content>
   </Container>
 )
@@ -49,7 +58,6 @@ const Content = styled.div`
 const Name = styled.h4`
   line-height: 20px;
   max-height: 40px;
-  margin: 0;
   margin-top: 16px;
   overflow: hidden;
   display: block;

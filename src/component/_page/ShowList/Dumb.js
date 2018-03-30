@@ -8,7 +8,7 @@ export type Props = {
   goTo: () => void,
 }
 
-export const ShowList = ({ shows, goTo }: Props) => (
+export const ShowList = ({ shows, ...props }: Props) => (
   <Container>
     <Header>
       <p>TV Show and web series database.</p>
@@ -18,13 +18,7 @@ export const ShowList = ({ shows, goTo }: Props) => (
       </p>
     </Header>
     <List>
-      {shows.map(show => (
-        <Card
-          key={show.id}
-          onClick={() => goTo(`show/${show.id}`)}
-          show={show}
-        />
-      ))}
+      {shows.map(show => <Card key={show.id} show={show} {...props} />)}
     </List>
   </Container>
 )

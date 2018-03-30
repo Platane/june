@@ -3,6 +3,9 @@ import styled from 'preact-emotion'
 import { Image as Image_ } from '~/component/Image'
 import { FixedRatio } from '~/component/FixedRatio'
 import { StarCount as StarCount_ } from '~/component/StarCount'
+import { AnimateFromBox } from '~/component/_abstract/AnimateFromBox'
+import { withPositionTracker } from '~/component/_abstract/positionTracker'
+
 import {
   dark,
   shadow,
@@ -10,10 +13,16 @@ import {
   borderRadius,
 } from '~/component/_abstract/palette'
 
-export const Header = ({ show }) => (
+const Header_ = ({ show, getPosition }) => (
   <Container>
     <ImageW ratio={4 / 5}>
-      <Image src={show.image && show.image.original} />
+      <AnimateFromBox
+        origin={getPosition(`show.${show.id}`)}
+        duration={300}
+        scale
+      >
+        <Image src={show.image && show.image.original} />
+      </AnimateFromBox>
     </ImageW>
 
     <Content>
@@ -28,6 +37,8 @@ export const Header = ({ show }) => (
     </Content>
   </Container>
 )
+
+export const Header = withPositionTracker(Header_)
 
 const Summary = ({ children }) => (
   <Summary_>
@@ -53,6 +64,8 @@ const Image = styled(Image_)`
   width: 100%;
   height: 100%;
   border-radius: ${borderRadius}px;
+  z-index: 1000;
+  position: relative;
 `
 
 const Content = styled.div`
