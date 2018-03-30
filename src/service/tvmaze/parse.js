@@ -17,6 +17,9 @@ const removeHtmlTag = text =>
     .filter(Boolean)
     .join('\n')
 
+// pathetic attempt to prevent XSS injection
+const removeScriptTag = text => (text.includes('<script') ? null : text)
+
 const parseStatus = ({ status, schedule }) => {
   switch (status) {
     case 'Running':
@@ -42,7 +45,7 @@ export const parseShow = (x: Object): Show => ({
   id: x.id.toString(),
   name: x.name,
   network: (x.network && x.network.name) || null,
-  summary: (x.summary && removeHtmlTag(x.summary)) || null,
+  summary: (x.summary && removeScriptTag(removeHtmlTag(x.summary))) || null,
   rating:
     x.rating && isFinite(+x.rating.average) ? +x.rating.average / 10 : null,
   status: parseStatus(x),

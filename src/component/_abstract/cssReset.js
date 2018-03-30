@@ -12,7 +12,12 @@ export const injectReset = () => {
       *::after {
         box-sizing: border-box;
       }
-
+      
+      h1,h2,h3,h4,p,span{
+        line-height: 1.2;
+        margin: 0;
+      }
+      
       html,
       body {
         color: ${dark};

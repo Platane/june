@@ -31,11 +31,6 @@ export const ShowList = ({ shows, goTo }: Props) => (
 
 const Header = styled.div`
   margin: 8px;
-
-  & > p {
-    margin: 0;
-    line-height: 1.3;
-  }
 `
 
 const List = styled.div`

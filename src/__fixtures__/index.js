@@ -33,7 +33,7 @@ export const persons: Person[] = [
   },
   {
     id: '46398',
-    name: 'Scott Patterson',
+    name: 'Scott Patterson the third, duck of Mingoval',
     image: {
       medium:
         'http://static.tvmaze.com/uploads/images/medium_portrait/50/126420.jpg',
@@ -60,8 +60,9 @@ export const shows: Show[] = [
     summary:
       'Gilmore Girls is a drama centering around the relationship between a thirtysomething single mother and her teen daughter living in Stars Hollow, Connecticut.',
     cast: [
-      { actor: persons[0], character: persons[3] },
-      { actor: persons[2], character: persons[1] },
+      { actor: persons[0], character: persons[1] },
+      { actor: persons[2], character: persons[3] },
+      { actor: persons[1], character: persons[2] },
     ],
   },
   {
@@ -95,8 +96,24 @@ export const shows: Show[] = [
         'http://static.tvmaze.com/uploads/images/original_untouched/25/64201.jpg',
     },
     summary:
-      "The city of Townsville may be a beautiful, bustling metropolis, but don't be fooled! There's evil afoot! And only three things can keep the bad guys at bay: Blossom, Bubbles and Buttercup, three super-powered little girls, known to their fans (and villains everywhere) as <b>The Powerpuff Girls</b>. Juggling school, bedtimes, and beating up giant monsters may be daunting, but together the Powerpuff Girls are up to the task. Battling a who's who of evil, they show what it really means to \"fight like a girl.\"",
+      "The city of Townsville may be a beautiful, bustling metropolis, but don't be fooled! There's evil afoot! And only three things can keep the bad guys at bay: Blossom, Bubbles and Buttercup, three super-powered little girls, known to their fans (and villains everywhere) as The Powerpuff Girls. Juggling school, bedtimes, and beating up giant monsters may be daunting, but together the Powerpuff Girls are up to the task. Battling a who's who of evil, they show what it really means to \"fight like a girl.\"",
     cast: [],
+  },
+  {
+    id: '6778',
+    name:
+      'Long Long Long long text, like a long long long text, but even longer, with extra words like: boat, triangle and strawberry',
+    genres: ['Drama', 'Comedy', 'Romance', 'Action', 'Crime'],
+    status: { type: 'Running', scheduledDay: 'Monday' },
+    rating: 0.2,
+    network: 'Cartoon Network, not this one the other one, with the blue logo',
+    image: {
+      medium: 'http://github.com/platane.png',
+      original: 'http://github.com/platane.png',
+    },
+    summary:
+      "The city of Townsville may be a beautiful, bustling metropolis, but don't be fooled! There's evil afoot! And only three things can keep the bad guys at bay: Blossom, Bubbles and Buttercup, three super-powered little girls, known to their fans (and villains everywhere) as The Powerpuff Girls. Juggling school, bedtimes, and beating up giant monsters may be daunting, but together the Powerpuff Girls are up to the task. Battling a who's who of evil, they show what it really means to \"fight like a girl.\"",
+    cast: [{ actor: persons[3], character: persons[3] }],
   },
   {
     id: '6772',

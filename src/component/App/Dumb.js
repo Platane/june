@@ -6,6 +6,8 @@ import { Footer } from '~/component/Footer'
 import { Show } from '~/component/_page/Show'
 import { ShowList } from '~/component/_page/ShowList'
 
+import { ligthGrey } from '~/component/_abstract/palette'
+
 export const Content = ({ router, ...props }) => {
   switch (router.key) {
     case 'showList':
@@ -41,4 +43,5 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  background-color: ${ligthGrey};
 `
