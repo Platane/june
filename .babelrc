@@ -10,6 +10,13 @@
       }
     ],
     [
+      "flow-runtime",
+      {
+        "assert": false,
+        "annotate": false
+      }
+    ],
+    [
       "transform-inline-environment-variables",
       {
         "include": ["NODE_ENV", "VERSION", "PATHNAME_BASE"]
@@ -24,6 +31,9 @@
   "env": {
     "production": {
       "presets": ["minify"]
+    },
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
     }
   }
 }
