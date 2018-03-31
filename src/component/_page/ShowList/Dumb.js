@@ -17,6 +17,7 @@ export const ShowList = ({ shows, ...props }: Props) => (
         information.
       </p>
     </Header>
+    <Label>Last Added Shows</Label>
     <List>
       {shows.map(show => <Card key={show.id} show={show} {...props} />)}
     </List>
@@ -24,7 +25,11 @@ export const ShowList = ({ shows, ...props }: Props) => (
 )
 
 const Header = styled.div`
-  margin: 8px;
+  margin: 32px 8px 64px 8px;
+`
+
+const Label = styled.h2`
+  margin: 32px 8px;
 `
 
 const List = styled.div`
@@ -55,6 +60,8 @@ const Card = styled(Card_)`
   @media (max-width: 600px) {
     width: calc(${100 / 2}% - 16px);
   }
+
+  transition: width 280ms ease, height 280ms ease;
 `
 
 const Container = styled.div``

@@ -1,5 +1,5 @@
-import { h, Component } from 'preact'
-import styled from 'preact-emotion'
+import { h } from 'preact'
+import styled, { keyframes } from 'preact-emotion'
 import { Image as Image_ } from '~/component/Image'
 import { FixedRatio } from '~/component/FixedRatio'
 import { StarCount as StarCount_ } from '~/component/StarCount'
@@ -46,7 +46,27 @@ const Summary = ({ children }) => (
   </Summary_>
 )
 
-const Summary_ = styled.div``
+const RatingAnimation = keyframes`
+  0%{ opacity: 0; transform:translateX(300px);};
+  20%{ opacity: 0; transform:translateX(300px);};
+  60%{ opacity: 1; transform:translateX(0px);};
+  100%{ opacity: 1; transform:translateX(0px);};
+`
+const NameAnimation = keyframes`
+  0%{ opacity: 0; transform:translateX(300px);};
+  40%{ opacity: 0; transform:translateX(300px);};
+  80%{ opacity: 1; transform:translateX(0px);};
+  100%{ opacity: 1; transform:translateX(0px);};
+`
+const SummaryAnimation = keyframes`
+  0%{ opacity: 0; transform:translateX(300px);};
+  60%{ opacity: 0; transform:translateX(300px);};
+  100%{ opacity: 1; transform:translateX(0px);};
+`
+
+const Summary_ = styled.div`
+  animation: ${SummaryAnimation} 480ms ease;
+`
 
 const ImageW = styled(FixedRatio)`
   width: 280px;
@@ -64,6 +84,7 @@ const Image = styled(Image_)`
   width: 100%;
   height: 100%;
   border-radius: ${borderRadius}px;
+  transform-origin: center center;
   z-index: 1000;
   position: relative;
 `
@@ -76,6 +97,8 @@ const StarCountW = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  animation: ${RatingAnimation} 480ms ease;
 `
 
 const StarCountLabel = styled.span`
@@ -95,6 +118,8 @@ const Name = styled.h1`
   margin: 16px 0;
   overflow: hidden;
   display: block;
+
+  animation: ${NameAnimation} 480ms ease;
 `
 
 const Container = styled.div`

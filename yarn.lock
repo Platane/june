@@ -271,7 +271,7 @@ aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-"babel-cli@ 6.26.0":
+babel-cli@6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-cli/-/babel-cli-6.26.0.tgz#502ab54874d7db88ad00b887a06383ce03d002f1"
   dependencies:
@@ -2760,7 +2760,7 @@ flow-parser@^0.*:
   version "0.68.0"
   resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.68.0.tgz#9cc96620a102e316a314b6bcd56205ceace862d8"
 
-"flow-runtime@ 0.17.0":
+flow-runtime@0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/flow-runtime/-/flow-runtime-0.17.0.tgz#ff57dd22bd7b0682c7beff20c3590f6a4a8286e3"
 
@@ -5067,6 +5067,10 @@ react-dom@>=16:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-propstransition@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/react-propstransition/-/react-propstransition-2.0.6.tgz#d6c695192a95546bdd314c6d3bef52904c565952"
 
 react-simplest-typeahead@1.1.0:
   version "1.1.0"

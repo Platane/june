@@ -5,6 +5,7 @@ import { Header } from '~/component/Header'
 import { Footer } from '~/component/Footer'
 import { Show } from '~/component/_page/Show'
 import { ShowList } from '~/component/_page/ShowList'
+import { WallPaper } from '~/component/Wallpaper'
 
 import { ligthGrey } from '~/component/_abstract/palette'
 
@@ -23,6 +24,7 @@ export const Content = ({ router, ...props }) => {
 
 export const App = props => (
   <Container>
+    <WallPaper {...props} />
     <Header {...props} />
     <ContentWrap>
       <Content {...props} />
