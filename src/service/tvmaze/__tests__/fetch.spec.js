@@ -1,5 +1,11 @@
 import test from 'tape'
-import { getShowsByName, getCastForShow, createGetLastShows } from '../index'
+import {
+  getShowsByName,
+  getShowById,
+  getShowWithCastById,
+  getCastForShow,
+  createGetLastShows,
+} from '../index'
 import type { Show, CastItem } from 'type'
 
 const flatten = arr => [].concat(...arr)
@@ -29,6 +35,28 @@ test('getCastForShow', async t => {
   t.assert(cast.length, 'result should not be empty')
 
   t.assert(cast.every(s => CastItem.assert(s)), 'should return cast object')
+
+  t.end()
+})
+
+test('getShowById', async t => {
+  const show = await getShowById('139')
+
+  t.pass('request should not fail')
+
+  t.assert(Show.assert(show), 'should return show object')
+
+  t.end()
+})
+
+test('getShowWithCastById', async t => {
+  const show = await getShowWithCastById('139')
+
+  t.pass('request should not fail')
+
+  t.assert(Show.assert(show), 'should return show object')
+
+  t.assert(show.cast, 'cast array should inited')
 
   t.end()
 })

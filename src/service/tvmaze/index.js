@@ -8,10 +8,24 @@ export const getShowsByName = (pattern: string): Promise<Show[]> =>
     .then(res => res.json())
     .then(res => res.map(x => parseShow(x.show)))
 
+export const getShowById = (showId: string): Promise<Show | null> =>
+  fetch(`${endpoint}/shows/${showId}`)
+    .then(res => res.json())
+    .then(res => res && parseShow(res))
+
 export const getCastForShow = (showId: string): Promise<CastItem[]> =>
   fetch(`${endpoint}/shows/${showId}/cast`)
     .then(res => res.json())
     .then(res => res.map(parseCast))
+
+export const getShowWithCastById = (showId: string): Promise<Show | null> => {
+  let show, cast
+
+  return Promise.all([
+    getShowById(showId).then(x => (show = x)),
+    getCastForShow(showId).then(x => (cast = x)),
+  ]).then(() => cast && show && { ...show, cast })
+}
 
 export const createGetLastShows = () => {
   const alreadyRead = {}
