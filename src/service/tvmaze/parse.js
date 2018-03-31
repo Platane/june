@@ -6,11 +6,11 @@ import type { Show, Actor, Character } from 'type'
 const removeHtmlTag = text =>
   text
     // remove b tag
-    .replace(/\<b\>(.*)\<\/b\>/g, (_, x) => x)
+    .replace(/\<b\>(.*?)\<\/b\>/g, (_, x) => x)
     // remove i tag
-    .replace(/\<i\>(.*)\<\/i\>/g, (_, x) => x)
+    .replace(/\<i\>(.*?)\<\/i\>/g, (_, x) => x)
     // replace p tag with \n
-    .replace(/\<p\>(.*)\<\/p\>/g, (_, x) => '\n' + x)
+    .replace(/\<p\>(.*?)\<\/p\>/g, (_, x) => '\n' + x)
 
     // trim \n
     .split('\n')
