@@ -10,8 +10,8 @@ export const Info = ({ show }) => (
         { label: 'Streamed on', value: show.network || '-' },
         {
           label: 'Schedule',
-          value: show.status.scheduledDay
-            ? show.status.scheduledDay.join(',')
+          value: show.status.scheduledDays
+            ? show.status.scheduledDays.join(',')
             : '-',
         },
         { label: 'Status', value: show.status.type },

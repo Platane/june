@@ -69,7 +69,7 @@ export const shows: Show[] = [
     id: '33320',
     name: 'Derry Girls',
     genres: ['Comedy'],
-    status: { type: 'Running', scheduledDay: 'Thursday' },
+    status: { type: 'Running', scheduledDays: ['Thursday'] },
     rating: 0.68,
     network: 'Channel 4',
     image: {
@@ -86,7 +86,7 @@ export const shows: Show[] = [
     id: '6771',
     name: 'The Powerpuff Girls',
     genres: ['Comedy'],
-    status: { type: 'Running', scheduledDay: 'Sunday' },
+    status: { type: 'Running', scheduledDays: ['Sunday'] },
     rating: 0.7,
     network: 'Cartoon Network',
     image: {
@@ -104,7 +104,18 @@ export const shows: Show[] = [
     name:
       'Long Long Long long text, like a long long long text, but even longer, with extra words like: boat, triangle and strawberry',
     genres: ['Drama', 'Comedy', 'Romance', 'Action', 'Crime'],
-    status: { type: 'Running', scheduledDay: 'Monday' },
+    status: {
+      type: 'Running',
+      scheduledDays: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ],
+    },
     rating: 0.2,
     network: 'Cartoon Network, not this one the other one, with the blue logo',
     image: {
