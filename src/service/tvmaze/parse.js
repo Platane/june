@@ -47,7 +47,9 @@ export const parseShow = (x: Object): Show => ({
   network: (x.network && x.network.name) || null,
   summary: (x.summary && removeScriptTag(removeHtmlTag(x.summary))) || null,
   rating:
-    x.rating && isFinite(+x.rating.average) ? +x.rating.average / 10 : null,
+    x.rating && isFinite(parseFloat(x.rating.average))
+      ? parseFloat(x.rating.average) / 10
+      : null,
   status: parseStatus(x),
   genres: x.genres || [],
   image: x.image || null,
