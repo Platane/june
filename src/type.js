@@ -32,7 +32,7 @@ export type Show = {
   network: string | null,
   rating: number | null,
   status:
-    | { type: 'Running', scheduledDay: Day }
+    | { type: 'Running', scheduledDays: Day[] }
     | { type: 'Ended' }
     | { type: 'In Development' },
   genres: Genre[],

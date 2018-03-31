@@ -25,7 +25,7 @@ const parseStatus = ({ status, schedule }) => {
     case 'Running':
       return {
         type: 'Running',
-        scheduledDay: schedule.days[0],
+        scheduledDays: schedule.days || [],
       }
 
     case 'In Development':

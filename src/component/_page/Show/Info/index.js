@@ -8,7 +8,12 @@ export const Info = ({ show }) => (
     <List>
       {[
         { label: 'Streamed on', value: show.network || '-' },
-        { label: 'Schedule', value: show.status.scheduledDay || '-' },
+        {
+          label: 'Schedule',
+          value: show.status.scheduledDay
+            ? show.status.scheduledDay.join(',')
+            : '-',
+        },
         { label: 'Status', value: show.status.type },
         { label: 'Genre', value: show.genres.join(', ') },
       ].map(({ label, value }) => (
