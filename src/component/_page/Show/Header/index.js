@@ -84,7 +84,7 @@ const Image = styled(Image_)`
   width: 100%;
   height: 100%;
   border-radius: ${borderRadius}px;
-  transform-origin: center center;
+  transform-origin: 0 0;
   z-index: 1000;
   position: relative;
 `
