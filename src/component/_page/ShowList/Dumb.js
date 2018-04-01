@@ -6,7 +6,10 @@ import type { Show } from 'type'
 
 export type Props = {
   shows: Show[],
+  pending: boolean,
+
   goTo: () => void,
+  loadMore: () => void,
 }
 
 export const ShowList = ({ shows, pending, loadMore, ...props }: Props) => (
@@ -23,6 +26,7 @@ export const ShowList = ({ shows, pending, loadMore, ...props }: Props) => (
       {shows.map(show => <Card key={show.id} show={show} {...props} />)}
     </List>
     {!pending && <LoadMoreButton onClick={loadMore}>Load more</LoadMoreButton>}
+    {pending && <PendingLabel>loading ...</PendingLabel>}
   </Container>
 )
 
@@ -36,6 +40,11 @@ const LoadMoreButton = styled.div`
   &:active {
     transform: scale(0.98, 0.98);
   }
+`
+const PendingLabel = styled.div`
+  padding: 16px;
+  margin: 32px 0;
+  text-align: center;
 `
 
 const Header = styled.div`

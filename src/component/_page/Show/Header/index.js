@@ -91,6 +91,7 @@ const Image = styled(Image_)`
 
 const Content = styled.div`
   margin-top: 32px;
+  overflow: hidden;
 `
 
 const StarCountW = styled.div`
@@ -126,7 +127,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  overflow: hidden;
 
   @media (max-width: 600px) {
     flex-direction: column;

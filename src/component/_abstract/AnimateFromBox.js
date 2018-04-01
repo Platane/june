@@ -40,9 +40,9 @@ export class AnimateFromBox extends Component {
     const origin = this.props.origin
     const target = this.base.getBoundingClientRect()
 
-    const ketFrames = createKeyFrames(this.props.scale)(origin, target)
+    const keyFrames = createKeyFrames(this.props.scale)(origin, target)
 
-    this.base.animate(ketFrames, {
+    this.base.animate(keyFrames, {
       duration: this.props.duration,
       easing: this.props.easing,
     })
