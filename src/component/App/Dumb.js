@@ -29,7 +29,7 @@ export const App = props => (
     <Header {...props} />
     <Transition
       toTransition={{ ...props.router }}
-      delay={500000}
+      delay={400}
       equal={(a, b) => a.path == b.path}
     >
       {({ next, previous }) => (
