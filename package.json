@@ -4,14 +4,12 @@
   "version": "0.1.0",
   "dependencies": {
     "emotion": "9.1.0",
-    "flow-runtime": "0.17.0",
     "preact": "8.2.7",
     "preact-compat": "3.18.0",
     "preact-emotion": "9.1.0",
     "preact-redux": "2.0.3",
     "prop-types": "15.6.1",
     "react-propstransition": "2.0.6",
-    "react-simplest-typeahead": "1.1.0",
     "unfetch": "3.0.0"
   },
   "devDependencies": {
@@ -29,11 +27,11 @@
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.6.1",
     "babel-preset-flow": "6.23.0",
-    "babel-preset-minify": "0.3.0",
     "babili-webpack-plugin": "0.1.2",
     "browser-tap": "0.0.1",
     "file-loader": "1.1.11",
     "flow-bin": "0.69.0",
+    "flow-runtime": "0.17.0",
     "node-fetch": "2.1.2",
     "prettier": "1.11.1",
     "tap-spec": "4.1.1",

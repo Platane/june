@@ -23,7 +23,31 @@
   "presets": ["flow"],
   "env": {
     "production": {
-      "presets": ["minify"]
+      "plugins": [
+        "transform-class-properties",
+        [
+          "transform-runtime",
+          {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ],
+        "transform-async-to-generator"
+      ],
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": ["last 2 versions", "safari >= 7"]
+            },
+            "loose": true,
+            "module": false
+          }
+        ]
+      ]
     },
     "test": {
       "plugins": [
