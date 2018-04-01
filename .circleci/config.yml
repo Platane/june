@@ -24,6 +24,13 @@ jobs:
       - run: yarn test
 
       - run: yarn build
+      
+      - run: |
+          cd dist
+          echo '---' >> 404.html
+          echo 'permalink: /404.html' >> 404.html
+          echo '---' >> 404.html
+          cat index.html >> 404.html
 
       - persist_to_workspace:
           root: dist
