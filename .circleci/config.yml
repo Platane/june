@@ -57,7 +57,7 @@ jobs:
       
       - run: |
           git config --global user.email bot@circleci.com
-          git config --global user.name bot
+          git config --global user.name circleci
           
           cd dist
           git init
