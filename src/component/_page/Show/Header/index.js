@@ -126,6 +126,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
+  overflow: hidden;
 
   @media (max-width: 600px) {
     flex-direction: column;

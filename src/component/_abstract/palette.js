@@ -1,7 +1,8 @@
 export const white = '#fff'
-export const dark = '#333'
+export const dark = '#000'
 export const grey = '#aaa'
-export const vibrant = ['#aaa', '#ccc', '#777', '#888']
+export const vibrant = ['#6B0848', '#A40A3C', '#EC610A', '#FFC300']
+
 export const ligthGrey = '#f6f6f6'
 
 export const shadowColor = '#3332'

@@ -38,5 +38,5 @@ const Bar = styled.div`
   top: 0;
   bottom: 0;
   left: 0;
-  background-color: ${vibrant[1]};
+  background-color: ${vibrant[3]};
 `

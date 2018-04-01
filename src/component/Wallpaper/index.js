@@ -1,7 +1,13 @@
 import { h } from 'preact'
 import styled, { css, keyframes } from 'preact-emotion'
 import { Transition } from 'react-propstransition'
-import { grey, vibrant, shadowColor } from '~/component/_abstract/palette'
+import {
+  grey,
+  vibrant,
+  shadowColor,
+  shadowExpand,
+  shadowBlur,
+} from '~/component/_abstract/palette'
 
 const getColor = key => {
   switch (key) {
@@ -15,28 +21,31 @@ const getColor = key => {
 }
 
 export const WallPaper = ({ router }) => (
-  <Transition toTransition={router.key} duration={400}>
-    {({ next, previous, transition }) => (
-      <Container>
-        {transition && (
+  <ContainerW>
+    <Transition toTransition={router.key} duration={400}>
+      {({ next, previous, transition }) => (
+        <Container>
+          {transition && (
+            <Cut
+              key={previous}
+              style={{
+                transform: 'translateY( -200px )',
+                animationName: disappear,
+                backgroundColor: getColor(previous),
+              }}
+            />
+          )}
           <Cut
-            key={previous}
+            key={next}
             style={{
-              animationName: disappear,
-              backgroundColor: getColor(previous),
+              animationName: transition && appear,
+              backgroundColor: getColor(next),
             }}
           />
-        )}
-        <Cut
-          key={next}
-          style={{
-            animationName: transition && appear,
-            backgroundColor: getColor(next),
-          }}
-        />
-      </Container>
-    )}
-  </Transition>
+        </Container>
+      )}
+    </Transition>
+  </ContainerW>
 )
 
 const appear = keyframes`
@@ -58,12 +67,12 @@ const Cut = styled.div`
   overflow: hidden;
   position: absolute;
   top: -100px;
-  left: -500px;
-  right: -500px;
+  left: -100px;
+  right: -100px;
   height: 200px;
 
-  opacity: 0.85;
   transform-origin: 50% 50%;
+  box-shadow: 0 0 ${shadowBlur / 4}px ${shadowExpand / 4}px ${shadowColor};
 
   animation-duration: 620ms;
   animation-timing-function: linear;
@@ -78,4 +87,12 @@ const Container = styled.div`
   height: 300px;
   transform-origin: 0 0;
   transform: scale(1, 4);
+`
+const ContainerW = styled.div`
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 600px;
 `
