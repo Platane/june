@@ -36,6 +36,9 @@ jobs:
           root: dist
           paths:
             - ./*
+            
+      - store_artifacts:
+          path: dist
 
 
 
