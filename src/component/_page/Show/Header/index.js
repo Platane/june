@@ -29,7 +29,7 @@ const Header_ = ({ show, getPosition }) => (
       <StarCountW>
         <StarCount count={show.rating} />
         <StarCountLabel count={show.rating}>
-          {Math.round(show.rating * 10) / 2}
+          {Math.round(show.rating * 10) / 2} / 5
         </StarCountLabel>
       </StarCountW>
       <Name>{show.name}</Name>
