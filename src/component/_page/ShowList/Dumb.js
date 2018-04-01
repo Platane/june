@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
 import styled from 'preact-emotion'
 import { Card as Card_ } from './Card'
+import { borderRadius, vibrant } from '~/component/_abstract/palette'
 import type { Show } from 'type'
 
 export type Props = {
@@ -8,7 +9,7 @@ export type Props = {
   goTo: () => void,
 }
 
-export const ShowList = ({ shows, ...props }: Props) => (
+export const ShowList = ({ shows, pending, loadMore, ...props }: Props) => (
   <Container>
     <Header>
       <p>TV Show and web series database.</p>
@@ -21,8 +22,21 @@ export const ShowList = ({ shows, ...props }: Props) => (
     <List>
       {shows.map(show => <Card key={show.id} show={show} {...props} />)}
     </List>
+    {!pending && <LoadMoreButton onClick={loadMore}>Load more</LoadMoreButton>}
   </Container>
 )
+
+const LoadMoreButton = styled.div`
+  padding: 16px;
+  margin: 32px 0;
+  text-align: center;
+  background-color: ${vibrant[3]};
+  border-radius: ${borderRadius};
+  cursor: pointer;
+  &:active {
+    transform: scale(0.98, 0.98);
+  }
+`
 
 const Header = styled.div`
   margin: 32px 8px 64px 8px;
